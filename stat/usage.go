@@ -64,7 +64,9 @@ func (u *Usage) publishUsage() {
 	if usage < 0 {
 		usage = 0
 	}
-	u.metrics.WithLabelValues("usage").Set(float64(usage))
+	if u.metrics != nil {
+		u.metrics.WithLabelValues("usage").Set(float64(usage))
+	}
 }
 
 // CpuUsage returns current cpu usage.

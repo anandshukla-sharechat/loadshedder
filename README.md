@@ -11,9 +11,17 @@
     use this function as middleware. It needs sheddingStat, cpu threshold and probe API (for disabling load shedding for live & readiness check api endpoint)
 
 
-## Example :
-    In main.go add these lines 
+##    Example :
+### In main.go add these lines 
 
 
     sheddingStat := loadshedder.NewSheddingStat(loadSheddingMetrics *prometheus.CounterVec, cpuMetrics *prometheus.GaugeVec) // returns object of *SheddingStat type
     router.Use(loadshedder.GinUnarySheddingInterceptor(shedderEnabled bool, cpuThreshold int64, probeAPI string, sheddingStat *SheddingStat))
+
+    
+shedderEnabled : boolean flag to enable load shedder or not
+cpuThreshold : the threshold beyond which load shedding starts
+probeAPI : To disable load shedding for api which is responsible for liveness/readiness probe checks 
+
+
+    
