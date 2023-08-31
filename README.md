@@ -1,6 +1,6 @@
 # loadshedder
 
- This library is used to shed excess load on the basis of cpu utilisation. You can use instance of prometheus GaugeVec & CounterVec to plot CPU utilisation & sheddings metric. To get the library simply run : 
+ This library is used to shed excess load on the basis of cpu utilisation. You can use instance of prometheus GaugeVec & CounterVec if you want to plot CPU utilisation & sheddings metric (they are optional - you can use nil if you don't want to add signal for them). To get the library simply run : 
 
     go get -u github.com/anandshukla-sharechat/loadshedder@main
 
@@ -26,4 +26,13 @@ cpuThreshold : the threshold beyond which load shedding starts
 probeAPI : To disable load shedding for api which is responsible for liveness/readiness probe checks 
 
 
+## Queries for Prometheus :
+
+Query for load shedding stats : 
+
+    100 * (sum(rate(Load_shedding_metrics{service_prometheus_track=~"livestream-feed-relevance", stat = "dropped"}[2m])) by (kubernetes_pod_name) OR on() vector(0)) / (sum(rate(Load_shedding_metrics{service_prometheus_track=~"livestream-feed-relevance", stat = "total"}[2m])) by (kubernetes_pod_name) OR on() vector(0))
+
+Query for CPU utilisation :
+
+    avg(total_cpu_usage_stat{service_prometheus_track=~"livestream-feed-relevance", metric = "usage"}[2m]) by (kubernetes_pod_name) 
     
