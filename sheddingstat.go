@@ -1,8 +1,8 @@
 package loadshedder
 
 import (
+	"github.com/anandshukla-sharechat/loadshedder/stat"
 	"github.com/prometheus/client_golang/prometheus"
-	"loadshedder/stat"
 	"sync/atomic"
 	"time"
 )
