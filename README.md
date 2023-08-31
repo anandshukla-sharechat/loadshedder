@@ -22,7 +22,9 @@
 
     
 shedderEnabled : boolean flag to enable load shedder or not
+
 cpuThreshold : the threshold beyond which load shedding starts
+
 probeAPI : To disable load shedding for api which is responsible for liveness/readiness probe checks 
 
 
