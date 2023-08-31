@@ -1,9 +1,9 @@
 package loadshedder
 
 import (
+	"github.com/anandshukla-sharechat/loadshedder/stat"
+	"github.com/anandshukla-sharechat/loadshedder/utils"
 	"github.com/gin-gonic/gin"
-	"loadshedder/stat"
-	"loadshedder/utils"
 	"net/http"
 )
 

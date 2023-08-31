@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"github.com/prometheus/client_golang/prometheus"
 	"go.uber.org/zap"
-	"loadshedder/utils"
 	"strings"
 	"sync"
 	"time"

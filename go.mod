@@ -1,4 +1,4 @@
-module loadshedder
+module github.com/anandshukla-sharechat/loadshedder
 
 go 1.20
 

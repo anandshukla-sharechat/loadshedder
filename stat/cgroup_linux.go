@@ -3,8 +3,6 @@ package stat
 import (
 	"bufio"
 	"fmt"
-	"loadshedder/utils"
-
 	"os"
 	"path"
 	"strconv"
