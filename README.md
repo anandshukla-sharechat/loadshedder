@@ -5,7 +5,10 @@
     go get -u github.com/anandshukla-sharechat/loadshedder@main
 
 ## NewSheddingStat : 
-    use this function to create an instance of shedding stat.
+    use this function to create an instance of shedding stat. Names for the cpu stat gauge vec & load shedding counter vec
+
+    totalCpuUsageStat                 = "total_cpu_usage_stat"
+	loadSheddingMetric                = "Load_shedding_metrics"
 
  
 
